@@ -276,5 +276,20 @@
 
   <footer>&copy; 2026 Jacob Isaac &middot; Hosted on GitHub Pages</footer>
 
+  <script>
+    // Phones (esp. iPhone Safari) won't download a PDF embedded as a data: link,
+    // so convert it to a real file (Blob) the browser can save or open.
+    document.querySelectorAll('a[href^="data:application/pdf"]').forEach(function (a) {
+      try {
+        var b64 = a.getAttribute('href').split(',')[1];
+        var bin = atob(b64), bytes = new Uint8Array(bin.length);
+        for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+        var url = URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' }));
+        a.setAttribute('href', url);
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener');
+      } catch (e) {}
+    });
+  </script>
 </body>
 </html>
