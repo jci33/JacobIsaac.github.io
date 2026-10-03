@@ -78,6 +78,8 @@
     .card .links a { color: var(--navy); font-weight: 600; font-size: .9rem; text-decoration: none; border-bottom: 2px solid var(--gold); }
     .card .links a:hover { color: #8a5a00; }
     .card .note { margin-top: 14px; font-size: .85rem; font-style: italic; }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 720px) { .grid-2 { grid-template-columns: 1fr; } }
     .chips { display: flex; flex-wrap: wrap; gap: 8px; }
     .chip { background: var(--navy); color: #fff; padding: 7px 14px; border-radius: 99px; font-size: .88rem; }
 
@@ -269,18 +271,23 @@
   </section>
   <section id="projects">
     <div class="wrap">
-      <h2>Projects &amp; Coursework</h2>
-      <p class="sub">Work from business school and on my own. Updated as I go.</p>
-      <div class="grid">
+      <h2>Projects</h2>
+      <p class="sub">Tools and analysis I've built for my own investing and my internship.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Portfolio Rebalancing Calculator <span class="tag">Complete</span></h3>
+          <p>An interactive calculator I built to manage my personal 20-stock model portfolio. It turns daily buy/sell signals into exact trade amounts, including when only part of the portfolio is being moved into the new model.</p>
+          <p class="note">Used to run my own rebalancing in a Fidelity brokerage account.</p>
+        </div>
+        <div class="card">
+          <h3>RIA Prospect List Prioritization <span class="tag">EdgeTech</span></h3>
+          <p>Cleaned a 221-firm list of Registered Investment Advisor leads down to 166 unique firms, verified contact information, and sorted them into color-coded priority tiers to focus outreach on the best-fit firms.</p>
+          <p class="note">Internal company work; data not shared publicly.</p>
+        </div>
         <div class="card">
           <h3>NorthStar Portfolio Intelligence <span class="tag">In progress</span></h3>
           <p>A personal stock portfolio dashboard that pulls live market data from Yahoo Finance, stores holdings in a local SQLite database, and features a scrolling ticker tape. Built and synced across two machines with Git/GitHub.</p>
           <p class="note">Code available on request.</p>
-        </div>
-        <div class="card">
-          <h3>Management Skills: Team Project <span class="tag">Fall 2026</span></h3>
-          <p>Semester-long team study of a real organization's management and people challenges for my Management Skills course at Rutgers Business School.</p>
-          <p class="note">Final report will be posted here when complete.</p>
         </div>
         <div class="card">
           <h3>Personal Portfolio Website <span class="tag">Live</span></h3>
